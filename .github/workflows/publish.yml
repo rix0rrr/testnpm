@@ -84,4 +84,19 @@ jobs:
       - name: Add a tag
         run: |
           v=$(node -p "require('./package.json').version")
-          npm dist-tag add @rix0rrr/testnpm@${v} cool-version
+
+          echo "NPM_TOKEN=$NPM_TOKEN"
+
+          # Manual response
+          curl \
+            -H 'user-agent: npm/11.3.0 node/v24.2.0 darwin arm64 workspaces/false' \
+            -H 'content-type: application/json' \
+            -H 'npm-auth-type: web' \
+            -H 'npm-command: dist-tag' \
+            -H "authorization: Bearer ${NPM_TOKEN}" \
+            -H 'Accept: */*' \
+            --compressed \
+            -H 'connection: keep-alive' \
+            -X PUT https://registry.npmjs.org/-/package/@rix0rrr%2ftestnpm/dist-tags/bier -d '"1.0.0"'
+
+          # npm dist-tag add @rix0rrr/testnpm@${v} cool-version
