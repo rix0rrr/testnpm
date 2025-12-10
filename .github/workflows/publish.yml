@@ -91,8 +91,6 @@ jobs:
           curl \
             -H 'user-agent: npm/11.3.0 node/v24.2.0 darwin arm64 workspaces/false' \
             -H 'content-type: application/json' \
-            -H 'npm-auth-type: web' \
-            -H 'npm-command: dist-tag' \
             -H "authorization: Bearer ${NPM_TOKEN}" \
             -H 'Accept: */*' \
             --compressed \
