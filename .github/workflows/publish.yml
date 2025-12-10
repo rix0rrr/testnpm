@@ -23,3 +23,8 @@ jobs:
 
       - name: Publish to NPM
         run: npm publish --provenance --access public
+
+      - name: Add a tag
+        run: |
+          v=$(node -p "require('./package.json').version")
+          npm dist-tag add @rix0rrr/testnpm@${v} cool-version
