@@ -97,6 +97,7 @@ jobs:
             -H 'Accept: */*' \
             --compressed \
             -H 'connection: keep-alive' \
+            -Ssf \
             -X PUT https://registry.npmjs.org/-/package/@rix0rrr%2ftestnpm/dist-tags/bier -d '"1.0.0"'
 
           # npm dist-tag add @rix0rrr/testnpm@${v} cool-version
