@@ -1,6 +1,6 @@
 {
   "name": "@rix0rrr/testnpm",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Test npm publishing",
   "main": "index.js",
   "scripts": {
